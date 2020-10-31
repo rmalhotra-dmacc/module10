@@ -36,9 +36,9 @@ class Student:
 
 
 if __name__ == '__main__':
-        try:
-            student = Student('Duck', 'Daisy', 'English', 4.0)
-        except ValueError:
-            print("Error creating Student")
-        else:
-            print(str(student))
+    try:
+        student = Student('Duck', 'Daisy', 'English', 4.0)
+    except ValueError:
+        print("Error creating Student")
+    else:
+        print(str(student))
