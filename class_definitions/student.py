@@ -7,8 +7,6 @@ Student Class definition
 """
 
 
-
-
 class Student:
     """Student class"""
     MAJORS = ('Political Science', 'CompSci', 'English', 'Literature')
@@ -22,6 +20,12 @@ class Student:
         if major not in self.MAJORS:
             raise ValueError
 
+        if not isinstance(gpa, float):
+            raise ValueError
+
+        if not 0.0 <= gpa <= 4.0:
+            raise ValueError
+
         self.last_name = lname
         self.first_name = fname
         self.major = major
@@ -32,5 +36,9 @@ class Student:
 
 
 if __name__ == '__main__':
-        student = Student('Duck', 'Daisy', 'English', 4.0)
-        print(str(student))
+        try:
+            student = Student('Duck', 'Daisy', 'English', 4.0)
+        except ValueError:
+            print("Error creating Student")
+        else:
+            print(str(student))
